@@ -1,0 +1,19 @@
+{
+  "name": "pred_desktop",
+  "version": "1.0.0",
+  "description": "\"# pred_desktop\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cisnejo/pred_desktop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cisnejo/pred_desktop/issues"
+  },
+  "homepage": "https://github.com/cisnejo/pred_desktop#readme"
+}

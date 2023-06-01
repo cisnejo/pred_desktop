@@ -1,0 +1,225 @@
+CREATE TABLE `MATCHDATA` (
+    `id` int NOT NULL,
+    `server` text NOT NULL,
+    `gameDuration` text NOT NULL,
+    `players` null NOT NULL,
+    `winningTeam` int NOT NULL,
+    `Timestamp` timestamp NOT NULL,
+    `Namespace` text NOT NULL,
+    `starttime` text NOT NULL,
+    `endtime` text NOT NULL,
+    `gamemode` text NOT NULL,
+    `region` text NOT NULL,
+    `matchEndReason` text NOT NULL,
+    `sessionId` text NOT NULL,
+    `matchId` text NOT NULL,
+    PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `PLAYERMATCHDATA` (
+    `id` int NOT NULL,
+    `playerId` text NOT NULL,
+    `teamId` int NOT NULL,
+    `playerName` text NOT NULL,
+    `roleName` text NOT NULL,
+    `heroName` text NOT NULL,
+    `gameId` int NOT NULL,
+    PRIMARY KEY (`id`),
+    KEY `FK_1` (`gameId`),
+    CONSTRAINT `FK_1` FOREIGN KEY `FK_1` (`gameId`) REFERENCES `MATCHDATA` (`id`)
+);
+
+CREATE TABLE `DAMAGEHEALDATA` (
+    `id` int NOT NULL,
+    `magicalDamageTakenFromHeroes` int NOT NULL,
+    `totalHealingDone` int NOT NULL,
+    `crestHealingDone` int NOT NULL,
+    `totalDamageTakenFromHeroes` int NOT NULL,
+    `physicalDamageTakenFromHeroes` int NOT NULL,
+    `physicalDamageTaken` int NOT NULL,
+    `totalDamageDealtToHeroes` int NOT NULL,
+    `magicalDamageDealtToHeroes` int NOT NULL,
+    `totalDamageDealtToStructures` int NOT NULL,
+    `trueDamageTakenFromHeroes` int NOT NULL,
+    `totalDamageDealtToObjectives` int NOT NULL,
+    `trueDamageTaken` int NOT NULL,
+    `totalShieldingReceived` int NOT NULL,
+    `magicalDamageDealt` int NOT NULL,
+    `totalDamageTaken` int NOT NULL,
+    `totalDamageMitigated` int NOT NULL,
+    `trueDamageDealtToHeroes` int NOT NULL,
+    `largestCriticalStrike` int NOT NULL,
+    `physicalDamageDealt` int NOT NULL,
+    `utilityHealingDone` int NOT NULL,
+    `trueDamageDealt` int NOT NULL,
+    `itemHealingDone` int NOT NULL,
+    `totalDamageDealt` int NOT NULL,
+    `magicalDamageTaken` int NOT NULL,
+    `physicalDamageDealtToHeroes` int NOT NULL,
+    `playermatchId` int NOT NULL,
+    PRIMARY KEY (`id`),
+    KEY `FK_1` (`playermatchId`),
+    CONSTRAINT `FK_10` FOREIGN KEY `FK_1` (`playermatchId`) REFERENCES `PLAYERMATCHDATA` (`id`)
+);
+
+CREATE TABLE `GOLDEARNEDATINTERVAL` (
+    `id` int NOT NULL,
+    `goldEarnedAtInterval` int NOT NULL,
+    `playermatchId` int NOT NULL,
+    PRIMARY KEY (`id`),
+    KEY `FK_1` (`playermatchId`),
+    CONSTRAINT `FK_8` FOREIGN KEY `FK_1` (`playermatchId`) REFERENCES `PLAYERMATCHDATA` (`id`)
+);
+
+CREATE TABLE `HEROKILLSDATA` (
+    `id` int NOT NULL,
+    `killerentitytype` text NOT NULL,
+    `gametime` int NOT NULL,
+    `killedheroname` text NOT NULL,
+    `killerheroname` text NOT NULL,
+    `killerplayerId` text NOT NULL,
+    `killedplayerId` text NOT NULL,
+    `locationx` float NOT NULL,
+    `locationy` float NOT NULL,
+    `locationz` float NOT NULL,
+    `gameid` int NOT NULL,
+    PRIMARY KEY (`id`),
+    KEY `FK_1` (`gameid`),
+    CONSTRAINT `FK_4` FOREIGN KEY `FK_1` (`gameid`) REFERENCES `MATCHDATA` (`id`)
+);
+
+CREATE TABLE `INCOMEDATA` (
+    `id` int NOT NULL,
+    `goldEarned` int NOT NULL,
+    `goldSpent` int NOT NULL,
+    `playermatchId` int NOT NULL,
+    PRIMARY KEY (`id`),
+    KEY `FK_1` (`playermatchId`),
+    CONSTRAINT `FK_7` FOREIGN KEY `FK_1` (`playermatchId`) REFERENCES `PLAYERMATCHDATA` (`id`)
+);
+
+CREATE TABLE `INCOMETRANSACTIONSDATA` (
+    `id` int NOT NULL,
+    `transactionType` int NOT NULL,
+    `itemId` int NOT NULL,
+    `gameTime` int NOT NULL,
+    `playermatchId` int NOT NULL,
+    PRIMARY KEY (`id`),
+    KEY `FK_1` (`playermatchId`),
+    CONSTRAINT `FK_15` FOREIGN KEY `FK_1` (`playermatchId`) REFERENCES `PLAYERMATCHDATA` (`id`)
+);
+
+CREATE TABLE `INVENTORYDATA` (
+    `id` int NOT NULL,
+    `itemId` int NOT NULL,
+    `itemSlot` int NOT NULL,
+    `playermatchId` int NOT NULL,
+    PRIMARY KEY (`id`),
+    KEY `FK_1` (`playermatchId`),
+    CONSTRAINT `FK_6` FOREIGN KEY `FK_1` (`playermatchId`) REFERENCES `PLAYERMATCHDATA` (`id`)
+);
+
+CREATE TABLE `MINIONDATA` (
+    `id` int NOT NULL,
+    `minionsKilled` int NOT NULL,
+    `neutralMinionsEnemyJungle` int NOT NULL,
+    `neutralMinionsKilled` int NOT NULL,
+    `laneMinionsKilled` int NOT NULL,
+    `neutralMinionsTeamJungle` int NOT NULL,
+    `playermatchId` int NOT NULL,
+    PRIMARY KEY (`id`),
+    KEY `FK_1` (`playermatchId`),
+    CONSTRAINT `FK_11` FOREIGN KEY `FK_1` (`playermatchId`) REFERENCES `PLAYERMATCHDATA` (`id`)
+);
+
+CREATE TABLE `OBJECTIVEKILLSDATA` (
+    `id` int NOT NULL,
+    `gametime` int NOT NULL,
+    `killerheroname` text NOT NULL,
+    `killedplayerId` text NOT NULL,
+    `locationx` float NOT NULL,
+    `locationy` float NOT NULL,
+    `locationz` float NOT NULL,
+    `gameid` int NOT NULL,
+    PRIMARY KEY (`id`),
+    KEY `FK_1` (`gameid`),
+    CONSTRAINT `FK_5` FOREIGN KEY `FK_1` (`gameid`) REFERENCES `MATCHDATA` (`id`)
+);
+
+CREATE TABLE `PLAYERCOMBATDATA` (
+    `id` int NOT NULL,
+    `kills` int NOT NULL,
+    `largestMultiKill` int NOT NULL,
+    `assists` int NOT NULL,
+    `largestKillingSpree` int NOT NULL,
+    `deaths` int NOT NULL,
+    `playermatchId` int NOT NULL,
+    PRIMARY KEY (`id`),
+    KEY `FK_1` (`playermatchId`),
+    CONSTRAINT `FK_9` FOREIGN KEY `FK_1` (`playermatchId`) REFERENCES `PLAYERMATCHDATA` (`id`)
+);
+
+CREATE TABLE `PLAYERMATCHDATA` (
+    `id` int NOT NULL,
+    `playerId` text NOT NULL,
+    `teamId` int NOT NULL,
+    `playerName` text NOT NULL,
+    `roleName` text NOT NULL,
+    `heroName` text NOT NULL,
+    `gameId` int NOT NULL,
+    PRIMARY KEY (`id`),
+    KEY `FK_1` (`gameId`),
+    CONSTRAINT `FK_1` FOREIGN KEY `FK_1` (`gameId`) REFERENCES `MATCHDATA` (`id`)
+);
+
+CREATE TABLE `STRUCTUREDESTRUCTION` (
+    `id` NOT NULL,
+    `structureentitytype` text NOT NULL,
+    `gametime` int NOT NULL,
+    `destructionplayerId` text NOT NULL,
+    `destructionheroname` text NOT NULL,
+    `teamId` int NOT NULL,
+    `locationx` float NOT NULL,
+    `locationy` float NOT NULL,
+    `locationz` float NOT NULL,
+    `gameid` int NOT NULL,
+    PRIMARY KEY (`id`),
+    KEY `FK_1` (`gameid`),
+    CONSTRAINT `FK_3` FOREIGN KEY `FK_1` (`gameid`) REFERENCES `MATCHDATA` (`id`)
+);
+
+CREATE TABLE `WARDDESTRUCTIONSDATA` (
+    `id` int NOT NULL,
+    `gameTime` int NOT NULL,
+    `typeId` int NOT NULL,
+    `location_x` float NOT NULL,
+    `location_y` float NOT NULL,
+    `location_z` float NOT NULL,
+    `playermatchId` int NOT NULL,
+    PRIMARY KEY (`id`),
+    KEY `FK_1` (`playermatchId`),
+    CONSTRAINT `FK_12` FOREIGN KEY `FK_1` (`playermatchId`) REFERENCES `PLAYERMATCHDATA` (`id`)
+);
+
+CREATE TABLE `WARDPLACEMENTSDATA` (
+    `id` int NOT NULL,
+    `gameTime` int NOT NULL,
+    `typeId` int NOT NULL,
+    `location_x` float NOT NULL,
+    `location_y` float NOT NULL,
+    `location_z` float NOT NULL,
+    `playermatchId` int NOT NULL,
+    PRIMARY KEY (`id`),
+    KEY `FK_1` (`playermatchId`),
+    CONSTRAINT `FK_13` FOREIGN KEY `FK_1` (`playermatchId`) REFERENCES `PLAYERMATCHDATA` (`id`)
+);
+
+CREATE TABLE `WARDSDATA` (
+    `id` int NOT NULL,
+    `wardsplaced` int NOT NULL,
+    `wardsdestroyed` int NOT NULL,
+    `playermatchId` int NOT NULL,
+    PRIMARY KEY (`id`),
+    KEY `FK_1` (`playermatchId`),
+    CONSTRAINT `FK_2` FOREIGN KEY `FK_1` (`playermatchId`) REFERENCES `PLAYERMATCHDATA` (`id`)
+);

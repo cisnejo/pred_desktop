@@ -1,0 +1,169 @@
+[
+  {
+    "server": "",
+    "gameDuration": 1913,
+    "winningTeam": 1,
+    "players": {},
+    "Timestamp": "2023-03-23 12:36:16",
+    "Namespace": "PRED",
+    "playerData": [
+      {
+        "wardsData": {
+          "wardsPlaced": 9,
+          "wardsDestroyed": 1,
+          "wardDestructions": [
+            {
+              "gameTime": 1005,
+              "typeId": 0,
+              "location": {
+                "x": -7610.900000000001,
+                "y": 1212,
+                "z": 1132.1000000000001
+              }
+            }
+          ],
+          "wardPlacements": [
+            {
+              "gameTime": 241,
+              "typeId": 0,
+              "location": {
+                "x": -7090.400000000001,
+                "y": 2724.5,
+                "z": 1084.9
+              }
+            },
+            {
+              "gameTime": 873,
+              "typeId": 0,
+              "location": {
+                "x": -7695.1,
+                "y": 6876.3,
+                "z": 1496.2
+              }
+            }
+          ]
+        },
+        "abilityData": [
+          {
+            "gameTime": 35,
+            "abilityInputTag": "InputTag.Ability.Alternate"
+          }
+        ],
+        "minionData": {
+          "minionsKilled": 150,
+          "neutralMinionsEnemyJungle": 0,
+          "neutralMinionsKilled": 24,
+          "laneMinionsKilled": 126,
+          "neutralMinionsTeamJungle": 6
+        },
+        "playerId": "e0dd2fe308d649089b22a566840547b5",
+        "combatData": {
+          "kills": 4,
+          "largestMultiKill": 1,
+          "assists": 4,
+          "largestKillingSpree": 2,
+          "deaths": 9
+        },
+        "damageHealData": {
+          "magicalDamageTakenFromHeroes": 7676,
+          "totalHealingDone": 1975,
+          "crestHealingDone": 482,
+          "totalDamageTakenFromHeroes": 16677,
+          "physicalDamageTakenFromHeroes": 7951,
+          "physicalDamageTaken": 10155,
+          "totalDamageDealtToHeroes": 13362,
+          "magicalDamageDealtToHeroes": 1229,
+          "totalDamageDealtToStructures": 1032,
+          "trueDamageTakenFromHeroes": 1049,
+          "totalDamageDealtToObjectives": 9963,
+          "trueDamageTaken": 1049,
+          "totalShieldingReceived": 1177,
+          "magicalDamageDealt": 1551,
+          "totalDamageTaken": 18881,
+          "totalDamageMitigated": 7896,
+          "trueDamageDealtToHeroes": 367,
+          "largestCriticalStrike": 624,
+          "physicalDamageDealt": 98512,
+          "utilityHealingDone": 1493,
+          "trueDamageDealt": 1479,
+          "itemHealingDone": 0,
+          "totalDamageDealt": 101543,
+          "magicalDamageTaken": 7676,
+          "physicalDamageDealtToHeroes": 11766
+        },
+        "playerName": "FLASHtrooper",
+        "inventoryData": [
+          {
+            "itemId": 500106,
+            "itemSlot": 0
+          }
+        ],
+        "incomeData": {
+          "goldEarned": 11081,
+          "goldSpent": 10700,
+          "goldEarnedAtInterval": [350, 350],
+          "transactions": [
+            {
+              "transactionType": 11,
+              "itemId": 100006,
+              "gameTime": -1
+            }
+          ]
+        },
+        "teamId": 0,
+        "roleName": "ESelectedRole::Carry",
+        "heroName": "Huntress"
+      }
+    ],
+    "matchId": "97257addb18344f3b366e58779bab728",
+    "objectiveKills": [
+      {
+        "gameTime": 104,
+        "killerHeroName": "Rampage",
+        "killerPlayerId": "4f671234ce284183ac0b4b77b6ce80b4",
+        "location": {
+          "x": -4160.673084905781,
+          "y": -3764.4870863581855,
+          "z": 2228.8676738739014
+        },
+        "killedEntityType": "Type.Entity.Character.CampMinion.Buff.Jungle.Red"
+      }
+    ],
+    "startTime": "2023-03-23 12:04:21",
+    "endTime": "2023-03-23 12:36:16",
+    "gameMode": "pvp_sea",
+    "region": "",
+    "matchEndReason": "Core",
+    "heroKills": [
+      {
+        "killerEntityType": "Type.Entity.Character.Hero",
+        "gameTime": 141,
+        "killedHeroName": "Crunch",
+        "killerHeroName": "Sevarog",
+        "killerPlayerId": "208b130b782f4497a69e99e39cec603a",
+        "killedPlayerId": "674c144976da463aa54f2d14af7586e3",
+        "location": {
+          "x": 11259.722268219028,
+          "y": 658.4496017728326,
+          "z": 1519.639657083511
+        },
+        "isFirstBlood": true
+      }
+    ],
+    "SessionID": "E2D3820F7AE743AEA8C9BB306F78D8D9",
+    "structureDestructions": [
+      {
+        "structureEntityType": "Type.Entity.Pawn.Structure.OuterTower",
+        "gameTime": 734,
+        "destructionPlayerId": "208b130b782f4497a69e99e39cec603a",
+        "destructionHeroName": "Sevarog",
+        "teamId": 1,
+        "location": {
+          "x": 11639.178711,
+          "y": -4290.793945,
+          "z": 1177.3193359375
+        }
+      }
+    ]
+  }
+]

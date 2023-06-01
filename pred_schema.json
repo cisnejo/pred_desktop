@@ -1,0 +1,514 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "http://example.com/example.json",
+  "type": "array",
+  "default": [],
+  "title": "Root Schema",
+  "items": {
+    "type": "object",
+    "default": {},
+    "title": "A Schema",
+    "required": [
+      "server",
+      "gameDuration",
+      "winningTeam",
+      "players",
+      "Timestamp",
+      "Namespace",
+      "playerData"
+    ],
+    "properties": {
+      "server": {
+        "type": "string",
+        "default": "",
+        "title": "The server Schema"
+      },
+      "gameDuration": {
+        "type": "integer",
+        "default": 0,
+        "title": "The gameDuration Schema"
+      },
+      "winningTeam": {
+        "type": "integer",
+        "default": 0,
+        "title": "The winningTeam Schema"
+      },
+      "players": {
+        "type": "object",
+        "default": {},
+        "title": "The players Schema",
+        "required": [],
+        "properties": {}
+      },
+      "Timestamp": {
+        "type": "string",
+        "default": "",
+        "title": "The Timestamp Schema"
+      },
+      "Namespace": {
+        "type": "string",
+        "default": "",
+        "title": "The Namespace Schema"
+      },
+      "playerData": {
+        "type": "array",
+        "default": [],
+        "title": "The playerData Schema",
+        "items": {
+          "type": "object",
+          "default": {},
+          "title": "A Schema",
+          "required": [
+            "wardsData",
+            "abilityData",
+            "minionData",
+            "playerId",
+            "combatData",
+            "damageHealData",
+            "playerName",
+            "inventoryData",
+            "incomeData",
+            "teamId",
+            "roleName",
+            "heroName"
+          ],
+          "properties": {
+            "wardsData": {
+              "type": "object",
+              "default": {},
+              "title": "The wardsData Schema",
+              "required": [
+                "wardsPlaced",
+                "wardsDestroyed",
+                "wardDestructions",
+                "wardPlacements"
+              ],
+              "properties": {
+                "wardsPlaced": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The wardsPlaced Schema"
+                },
+                "wardsDestroyed": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The wardsDestroyed Schema"
+                },
+                "wardDestructions": {
+                  "type": "array",
+                  "default": [],
+                  "title": "The wardDestructions Schema",
+                  "items": {}
+                },
+                "wardPlacements": {
+                  "type": "array",
+                  "default": [],
+                  "title": "The wardPlacements Schema",
+                  "items": {
+                    "type": "object",
+                    "default": {},
+                    "title": "A Schema",
+                    "required": ["gameTime", "typeId", "location"],
+                    "properties": {
+                      "gameTime": {
+                        "type": "integer",
+                        "default": 0,
+                        "title": "The gameTime Schema"
+                      },
+                      "typeId": {
+                        "type": "integer",
+                        "default": 0,
+                        "title": "The typeId Schema"
+                      },
+                      "location": {
+                        "type": "object",
+                        "default": {},
+                        "title": "The location Schema",
+                        "required": ["x", "y", "z"],
+                        "properties": {
+                          "x": {
+                            "type": "number",
+                            "default": 0.0,
+                            "title": "The x Schema"
+                          },
+                          "y": {
+                            "type": "number",
+                            "default": 0.0,
+                            "title": "The y Schema"
+                          },
+                          "z": {
+                            "type": "number",
+                            "default": 0.0,
+                            "title": "The z Schema"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "abilityData": {
+              "type": "array",
+              "default": [],
+              "title": "The abilityData Schema",
+              "items": {
+                "type": "object",
+                "title": "A Schema",
+                "required": ["gameTime", "abilityInputTag"],
+                "properties": {
+                  "gameTime": {
+                    "type": "integer",
+                    "title": "The gameTime Schema"
+                  },
+                  "abilityInputTag": {
+                    "type": "string",
+                    "title": "The abilityInputTag Schema"
+                  }
+                }
+              }
+            },
+            "minionData": {
+              "type": "object",
+              "default": {},
+              "title": "The minionData Schema",
+              "required": [
+                "minionsKilled",
+                "neutralMinionsEnemyJungle",
+                "neutralMinionsKilled",
+                "laneMinionsKilled",
+                "neutralMinionsTeamJungle"
+              ],
+              "properties": {
+                "minionsKilled": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The minionsKilled Schema"
+                },
+                "neutralMinionsEnemyJungle": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The neutralMinionsEnemyJungle Schema"
+                },
+                "neutralMinionsKilled": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The neutralMinionsKilled Schema"
+                },
+                "laneMinionsKilled": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The laneMinionsKilled Schema"
+                },
+                "neutralMinionsTeamJungle": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The neutralMinionsTeamJungle Schema"
+                }
+              }
+            },
+            "playerId": {
+              "type": "string",
+              "default": "",
+              "title": "The playerId Schema"
+            },
+            "combatData": {
+              "type": "object",
+              "default": {},
+              "title": "The combatData Schema",
+              "required": [
+                "kills",
+                "largestMultiKill",
+                "assists",
+                "largestKillingSpree",
+                "deaths"
+              ],
+              "properties": {
+                "kills": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The kills Schema"
+                },
+                "largestMultiKill": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The largestMultiKill Schema"
+                },
+                "assists": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The assists Schema"
+                },
+                "largestKillingSpree": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The largestKillingSpree Schema"
+                },
+                "deaths": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The deaths Schema"
+                }
+              }
+            },
+            "damageHealData": {
+              "type": "object",
+              "default": {},
+              "title": "The damageHealData Schema",
+              "required": [
+                "magicalDamageTakenFromHeroes",
+                "totalHealingDone",
+                "crestHealingDone",
+                "totalDamageTakenFromHeroes",
+                "physicalDamageTakenFromHeroes",
+                "physicalDamageTaken",
+                "totalDamageDealtToHeroes",
+                "magicalDamageDealtToHeroes",
+                "totalDamageDealtToStructures",
+                "trueDamageTakenFromHeroes",
+                "totalDamageDealtToObjectives",
+                "trueDamageTaken",
+                "totalShieldingReceived",
+                "magicalDamageDealt",
+                "totalDamageTaken",
+                "totalDamageMitigated",
+                "trueDamageDealtToHeroes",
+                "largestCriticalStrike",
+                "physicalDamageDealt",
+                "utilityHealingDone",
+                "trueDamageDealt",
+                "itemHealingDone",
+                "totalDamageDealt",
+                "magicalDamageTaken",
+                "physicalDamageDealtToHeroes"
+              ],
+              "properties": {
+                "magicalDamageTakenFromHeroes": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The magicalDamageTakenFromHeroes Schema"
+                },
+                "totalHealingDone": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The totalHealingDone Schema"
+                },
+                "crestHealingDone": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The crestHealingDone Schema"
+                },
+                "totalDamageTakenFromHeroes": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The totalDamageTakenFromHeroes Schema"
+                },
+                "physicalDamageTakenFromHeroes": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The physicalDamageTakenFromHeroes Schema"
+                },
+                "physicalDamageTaken": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The physicalDamageTaken Schema"
+                },
+                "totalDamageDealtToHeroes": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The totalDamageDealtToHeroes Schema"
+                },
+                "magicalDamageDealtToHeroes": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The magicalDamageDealtToHeroes Schema"
+                },
+                "totalDamageDealtToStructures": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The totalDamageDealtToStructures Schema"
+                },
+                "trueDamageTakenFromHeroes": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The trueDamageTakenFromHeroes Schema"
+                },
+                "totalDamageDealtToObjectives": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The totalDamageDealtToObjectives Schema"
+                },
+                "trueDamageTaken": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The trueDamageTaken Schema"
+                },
+                "totalShieldingReceived": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The totalShieldingReceived Schema"
+                },
+                "magicalDamageDealt": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The magicalDamageDealt Schema"
+                },
+                "totalDamageTaken": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The totalDamageTaken Schema"
+                },
+                "totalDamageMitigated": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The totalDamageMitigated Schema"
+                },
+                "trueDamageDealtToHeroes": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The trueDamageDealtToHeroes Schema"
+                },
+                "largestCriticalStrike": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The largestCriticalStrike Schema"
+                },
+                "physicalDamageDealt": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The physicalDamageDealt Schema"
+                },
+                "utilityHealingDone": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The utilityHealingDone Schema"
+                },
+                "trueDamageDealt": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The trueDamageDealt Schema"
+                },
+                "itemHealingDone": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The itemHealingDone Schema"
+                },
+                "totalDamageDealt": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The totalDamageDealt Schema"
+                },
+                "magicalDamageTaken": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The magicalDamageTaken Schema"
+                },
+                "physicalDamageDealtToHeroes": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The physicalDamageDealtToHeroes Schema"
+                }
+              }
+            },
+            "playerName": {
+              "type": "string",
+              "default": "",
+              "title": "The playerName Schema"
+            },
+            "inventoryData": {
+              "type": "array",
+              "default": [],
+              "title": "The inventoryData Schema",
+              "items": {
+                "type": "object",
+                "title": "A Schema",
+                "required": ["itemId", "itemSlot"],
+                "properties": {
+                  "itemId": {
+                    "type": "integer",
+                    "title": "The itemId Schema"
+                  },
+                  "itemSlot": {
+                    "type": "integer",
+                    "title": "The itemSlot Schema"
+                  }
+                }
+              }
+            },
+            "incomeData": {
+              "type": "object",
+              "default": {},
+              "title": "The incomeData Schema",
+              "required": [
+                "goldEarned",
+                "goldSpent",
+                "goldEarnedAtInterval",
+                "transactions"
+              ],
+              "properties": {
+                "goldEarned": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The goldEarned Schema"
+                },
+                "goldSpent": {
+                  "type": "integer",
+                  "default": 0,
+                  "title": "The goldSpent Schema"
+                },
+                "goldEarnedAtInterval": {
+                  "type": "array",
+                  "default": [],
+                  "title": "The goldEarnedAtInterval Schema",
+                  "items": {
+                    "type": "integer",
+                    "title": "A Schema"
+                  }
+                },
+                "transactions": {
+                  "type": "array",
+                  "default": [],
+                  "title": "The transactions Schema",
+                  "items": {
+                    "type": "object",
+                    "title": "A Schema",
+                    "required": ["transactionType", "itemId", "gameTime"],
+                    "properties": {
+                      "transactionType": {
+                        "type": "integer",
+                        "title": "The transactionType Schema"
+                      },
+                      "itemId": {
+                        "type": "integer",
+                        "title": "The itemId Schema"
+                      },
+                      "gameTime": {
+                        "type": "integer",
+                        "title": "The gameTime Schema"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "teamId": {
+              "type": "integer",
+              "default": 0,
+              "title": "The teamId Schema"
+            },
+            "roleName": {
+              "type": "string",
+              "default": "",
+              "title": "The roleName Schema"
+            },
+            "heroName": {
+              "type": "string",
+              "default": "",
+              "title": "The heroName Schema"
+            }
+          }
+        }
+      }
+    }
+  }
+}
